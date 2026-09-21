@@ -1,0 +1,2204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INNOVA.GLOBAL</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --black:#050505;
+  --card:#0d0d0d;
+  --card2:#121212;
+  --gold:#d6ad55;
+  --gold2:#f3d98b;
+  --white:#fff;
+  --gray:#aaa;
+  --green:#38dc7a;
+  --red:#ff6868;
+}
+
+body{
+  background:
+  radial-gradient(circle at top,rgba(214,173,85,.12),transparent 35%),
+  var(--black);
+  color:var(--white);
+  font-family:Arial,Helvetica,sans-serif;
+  min-height:100vh;
+}
+
+.app{
+  width:100%;
+  max-width:540px;
+  margin:auto;
+  padding:16px;
+}
+
+.page{
+  display:none;
+  animation:show .25s ease;
+}
+
+.page.active{display:block}
+
+@keyframes show{
+  from{opacity:0;transform:translateY(8px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* LOGO */
+
+.logo-area{
+  text-align:center;
+  padding:20px 0 8px;
+}
+
+.logo{
+  width:105px;
+  height:105px;
+  border:2px solid var(--gold);
+  border-radius:50%;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--gold2);
+  font-size:28px;
+  font-weight:900;
+  letter-spacing:2px;
+  box-shadow:0 0 35px rgba(214,173,85,.18);
+}
+
+.brand{
+  color:var(--gold2);
+  font-size:27px;
+  font-weight:900;
+  margin-top:14px;
+  letter-spacing:1px;
+}
+
+.tagline{
+  color:#777;
+  font-size:10px;
+  letter-spacing:2px;
+  margin-top:5px;
+}
+
+.bismillah{
+  text-align:center;
+  color:var(--gold2);
+  font-size:20px;
+  margin-top:17px;
+}
+
+.bismillah-en{
+  text-align:center;
+  color:#777;
+  font-size:11px;
+  margin-top:5px;
+}
+
+/* HERO */
+
+.hero{
+  text-align:center;
+  padding:18px 4px;
+}
+
+.hero h1{
+  font-size:25px;
+  margin-bottom:10px;
+}
+
+.hero p{
+  color:var(--gray);
+  font-size:13px;
+  line-height:1.7;
+}
+
+/* CARDS */
+
+.card{
+  background:linear-gradient(145deg,#121212,#080808);
+  border:1px solid rgba(214,173,85,.35);
+  border-radius:22px;
+  padding:21px;
+  margin-top:16px;
+  box-shadow:0 18px 50px rgba(0,0,0,.4);
+}
+
+.card-title{
+  color:var(--gold2);
+  font-size:18px;
+  font-weight:bold;
+  margin-bottom:15px;
+}
+
+/* STEPS */
+
+.steps{
+  display:grid;
+  gap:10px;
+}
+
+.step{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:13px;
+  background:#0a0a0a;
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:14px;
+}
+
+.step-number{
+  width:34px;
+  height:34px;
+  min-width:34px;
+  border:1px solid var(--gold);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--gold2);
+  font-weight:bold;
+}
+
+.step-text{
+  color:#ddd;
+  font-size:13px;
+}
+
+/* BUTTONS */
+
+.btn{
+  width:100%;
+  padding:14px;
+  margin-top:11px;
+  border-radius:13px;
+  font-weight:bold;
+  border:none;
+  cursor:pointer;
+}
+
+.gold-btn{
+  background:linear-gradient(135deg,#b98a32,#f3d98b);
+  color:#050505;
+}
+
+.outline-btn{
+  background:transparent;
+  border:1px solid var(--gold);
+  color:var(--gold2);
+}
+
+.red-btn{
+  background:#241010;
+  border:1px solid rgba(255,104,104,.3);
+  color:#ff8585;
+}
+
+/* FORM */
+
+.group{
+  margin-bottom:14px;
+}
+
+label{
+  display:block;
+  color:#ccc;
+  font-size:12px;
+  margin-bottom:6px;
+}
+
+input,select{
+  width:100%;
+  padding:14px;
+  border-radius:12px;
+  background:#070707;
+  border:1px solid rgba(214,173,85,.28);
+  color:white;
+  outline:none;
+}
+
+input:focus,select:focus{
+  border-color:var(--gold);
+}
+
+.error{
+  color:var(--red);
+  font-size:12px;
+  margin-top:8px;
+}
+
+/* BACK */
+
+.back{
+  display:inline-block;
+  color:var(--gold2);
+  font-size:13px;
+  margin:7px 0 5px;
+  cursor:pointer;
+}
+
+/* PAYMENT */
+
+.notice{
+  background:#151207;
+  border-left:3px solid var(--gold);
+  border-radius:8px;
+  padding:12px;
+  color:#bbb;
+  font-size:12px;
+  line-height:1.6;
+}
+
+.payment-number{
+  text-align:center;
+  font-size:27px;
+  font-weight:bold;
+  color:var(--gold2);
+  border:1px dashed var(--gold);
+  border-radius:14px;
+  padding:16px;
+  margin:15px 0;
+}
+
+.methods{
+  display:flex;
+  gap:10px;
+}
+
+.method{
+  flex:1;
+  text-align:center;
+  border:1px solid rgba(214,173,85,.25);
+  border-radius:12px;
+  padding:12px;
+  color:#ddd;
+}
+
+/* SUCCESS */
+
+.success{
+  text-align:center;
+  padding:30px 20px;
+}
+
+.success-icon{
+  width:75px;
+  height:75px;
+  margin:auto;
+  border:2px solid var(--green);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--green);
+  font-size:38px;
+}
+
+.success h2{
+  color:var(--gold2);
+  margin:17px 0 9px;
+}
+
+.success p{
+  color:#999;
+  font-size:13px;
+  line-height:1.6;
+}
+
+.id-box{
+  color:var(--gold2);
+  font-size:28px;
+  font-weight:bold;
+  border:1px solid var(--gold);
+  border-radius:14px;
+  padding:16px;
+  margin:17px 0;
+}
+
+/* PROFILE */
+
+.profile-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin:7px 0 15px;
+}
+
+.profile-title{
+  font-size:23px;
+  color:var(--gold2);
+  font-weight:bold;
+}
+
+.settings{
+  width:44px;
+  height:44px;
+  border:1px solid var(--gold);
+  background:#0c0c0c;
+  color:var(--gold2);
+  border-radius:50%;
+  font-size:20px;
+}
+
+/* BIG PROFILE */
+
+.profile-card{
+  background:
+  radial-gradient(circle at top right,rgba(214,173,85,.14),transparent 40%),
+  linear-gradient(145deg,#171717,#080808);
+  border:1px solid rgba(214,173,85,.55);
+  border-radius:25px;
+  padding:25px;
+  box-shadow:0 20px 60px rgba(0,0,0,.5);
+}
+
+.profile-main{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.avatar{
+  width:110px;
+  height:110px;
+  min-width:110px;
+  border-radius:50%;
+  border:2px solid var(--gold);
+  background:#181818;
+  object-fit:cover;
+}
+
+.avatar-empty{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:43px;
+  color:var(--gold2);
+}
+
+.profile-name{
+  font-size:22px;
+  font-weight:bold;
+  margin-bottom:8px;
+  word-break:break-word;
+}
+
+.member-id{
+  color:var(--gold2);
+  font-weight:bold;
+  font-size:14px;
+  margin-bottom:10px;
+}
+
+.active{
+  color:var(--green);
+  font-size:12px;
+  font-weight:bold;
+}
+
+.show-more{
+  width:100%;
+  margin-top:21px;
+  padding:12px;
+  background:transparent;
+  border:1px solid rgba(214,173,85,.35);
+  border-radius:12px;
+  color:var(--gold2);
+  cursor:pointer;
+}
+
+.more{
+  display:none;
+  margin-top:8px;
+}
+
+.more.open{
+  display:block;
+}
+
+.detail{
+  display:flex;
+  justify-content:space-between;
+  padding:13px 0;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.detail:last-child{
+  border-bottom:none;
+}
+
+.detail-label{
+  color:#777;
+  font-size:12px;
+}
+
+.detail-value{
+  color:#eee;
+  font-size:13px;
+  text-align:right;
+}
+
+/* ABOUT */
+
+.about-title{
+  color:var(--gold2);
+  font-size:20px;
+  font-weight:bold;
+  margin-bottom:11px;
+}
+
+.about-text{
+  color:#b8b8b8;
+  font-size:14px;
+  line-height:1.8;
+}
+
+/* NEXT PROGRAM */
+
+.next{
+  background:
+  radial-gradient(circle at top right,rgba(214,173,85,.18),transparent 45%),
+  linear-gradient(145deg,#17130a,#080808);
+  border:1px solid rgba(214,173,85,.55);
+  border-radius:23px;
+  padding:25px 21px;
+  margin-top:16px;
+}
+
+.next-small{
+  color:var(--gold2);
+  font-size:11px;
+  letter-spacing:2px;
+  font-weight:bold;
+}
+
+.next-date{
+  font-size:28px;
+  font-weight:900;
+  margin:10px 0;
+}
+
+.next-text{
+  color:#aaa;
+  font-size:13px;
+  line-height:1.7;
+}
+
+.countdown{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:7px;
+  margin-top:19px;
+}
+
+.time{
+  background:#080808;
+  border:1px solid rgba(214,173,85,.25);
+  border-radius:11px;
+  text-align:center;
+  padding:11px 3px;
+}
+
+.time-number{
+  color:var(--gold2);
+  font-size:19px;
+  font-weight:bold;
+}
+
+.time-label{
+  color:#666;
+  font-size:8px;
+  margin-top:3px;
+}
+
+/* SOCIAL */
+
+.social-title{
+  color:var(--gold2);
+  text-align:center;
+  font-size:16px;
+  font-weight:bold;
+  margin-bottom:13px;
+}
+
+.social-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:9px;
+}
+
+.social{
+  min-height:75px;
+  border:1px solid rgba(214,173,85,.35);
+  border-radius:14px;
+  background:#090909;
+  color:#ddd;
+  text-decoration:none;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  font-size:11px;
+}
+
+.social-icon{
+  color:var(--gold2);
+  font-size:25px;
+}
+
+/* FOOTER */
+
+.footer{
+  text-align:center;
+  color:#555;
+  font-size:10px;
+  line-height:1.6;
+  margin:21px 0 8px;
+}
+
+/* SETTINGS */
+
+.settings-avatar{
+  display:block;
+  margin:3px auto 20px;
+}
+
+@media(max-width:380px){
+
+  .avatar{
+    width:88px;
+    height:88px;
+    min-width:88px;
+  }
+
+  .profile-name{
+    font-size:19px;
+  }
+
+  .profile-card{
+    padding:20px;
+  }
+
+  .next-date{
+    font-size:24px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<!-- ================= WELCOME ================= -->
+
+<section id="welcome" class="page active">
+
+  <div class="logo-area">
+
+    <div class="logo">IG</div>
+
+    <div class="brand">INNOVA.GLOBAL</div>
+
+    <div class="tagline">
+      SMART DIGITAL NETWORK PLATFORM
+    </div>
+
+  </div>
+
+  <div class="bismillah">
+    بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
+  </div>
+
+  <div class="bismillah-en">
+    Bismillahir Rahmanir Rahim
+  </div>
+
+  <div class="hero">
+
+    <h1>WELCOME TO INNOVA.GLOBAL</h1>
+
+    <p>
+      A professional digital network platform designed
+      to connect, learn and grow through a simple
+      member journey.
+    </p>
+
+  </div>
+
+  <div class="card">
+
+    <div class="card-title">
+      HOW IT WORKS
+    </div>
+
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-number">01</div>
+        <div class="step-text">
+          Create your member account
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">02</div>
+        <div class="step-text">
+          Complete the ৳200 activation payment
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">03</div>
+        <div class="step-text">
+          Enter your activation code
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">04</div>
+        <div class="step-text">
+          Access your member profile
+        </div>
+      </div>
+
+    </div>
+
+    <button class="btn gold-btn"
+      onclick="showPage('register')">
+      JOIN / CREATE ACCOUNT
+    </button>
+
+    <button class="btn outline-btn"
+      onclick="showPage('login')">
+      LOGIN
+    </button>
+
+  </div>
+
+
+  <div class="card">
+
+    <div class="social-title">
+      CONNECT WITH US
+    </div>
+
+    <div class="social-grid">
+
+      <a class="social"
+         href="https://t.me/+kOclYClnM0NmYzc1"
+         target="_blank">
+        <div class="social-icon">✈</div>
+        Telegram
+      </a>
+
+      <a class="social"
+         href="https://wa.me/8801313213083"
+         target="_blank">
+        <div class="social-icon">◉</div>
+        WhatsApp
+      </a>
+
+      <a class="social"
+         href="https://www.youtube.com/@PowerNetwork7X"
+         target="_blank">
+        <div class="social-icon">▶</div>
+        YouTube
+      </a>
+
+    </div>
+
+    <div style="
+      text-align:center;
+      color:#777;
+      font-size:11px;
+      margin-top:12px;
+    ">
+      WhatsApp: 01313213083
+    </div>
+
+  </div>
+
+  <div class="footer">
+    © 2026 INNOVA.GLOBAL<br>
+    CONNECT • LEARN • GROW
+  </div>
+
+</section>
+
+
+<!-- ================= REGISTER ================= -->
+
+<section id="register" class="page">
+
+  <span class="back"
+    onclick="showPage('welcome')">
+    ← Back
+  </span>
+
+  <div class="card">
+
+    <div class="card-title">
+      CREATE YOUR ACCOUNT
+    </div>
+
+    <div class="group">
+      <label>FULL NAME</label>
+      <input id="regName"
+             type="text"
+             placeholder="Enter your full name">
+    </div>
+
+    <div class="group">
+      <label>MOBILE NUMBER</label>
+      <input id="regMobile"
+             type="tel"
+             placeholder="Enter your mobile number">
+    </div>
+
+    <div class="group">
+      <label>PASSWORD</label>
+      <input id="regPassword"
+             type="password"
+             placeholder="Create your password">
+    </div>
+
+    <div class="group">
+      <label>CONFIRM PASSWORD</label>
+      <input id="regConfirm"
+             type="password"
+             placeholder="Confirm your password">
+    </div>
+
+    <div id="registerError"
+         class="error"></div>
+
+    <button class="btn gold-btn"
+      onclick="registerAccount()">
+      CONTINUE TO PAYMENT
+    </button>
+
+    <button class="btn outline-btn"
+      onclick="showPage('login')">
+      ALREADY HAVE AN ACCOUNT?
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- ================= PAYMENT ================= -->
+
+<section id="payment" class="page">
+
+  <span class="back"
+    onclick="showPage('register')">
+    ← Back
+  </span>
+
+  <div class="card">
+
+    <div class="card-title">
+      ACTIVATION PAYMENT
+    </div>
+
+    <div class="notice">
+      Complete the activation payment of
+      <b>৳200</b> using bKash or Nagad.
+    </div>
+
+    <div class="payment-number">
+      01313213083
+    </div>
+
+    <div class="methods">
+      <div class="method">bKash</div>
+      <div class="method">Nagad</div>
+    </div>
+
+    <br>
+
+    <div class="group">
+      <label>PAYMENT METHOD</label>
+
+      <select id="paymentMethod">
+        <option value="bKash">bKash</option>
+        <option value="Nagad">Nagad</option>
+      </select>
+    </div>
+
+    <div class="group">
+      <label>TRANSACTION ID</label>
+
+      <input id="transactionId"
+             type="text"
+             placeholder="Enter transaction ID">
+    </div>
+
+    <div id="paymentError"
+         class="error"></div>
+
+    <button class="btn gold-btn"
+      onclick="submitPayment()">
+      SUBMIT PAYMENT
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- ================= ACTIVATION ================= -->
+
+<section id="activation" class="page">
+
+  <div class="card">
+
+    <div class="card-title">
+      ACCOUNT ACTIVATION
+    </div>
+
+    <div class="notice">
+      Enter your activation code to activate
+      your INNOVA.GLOBAL member account.
+    </div>
+
+    <br>
+
+    <div class="group">
+      <label>ACTIVATION CODE</label>
+
+      <input id="activationCode"
+             type="text"
+             inputmode="numeric"
+             placeholder="Enter activation code">
+    </div>
+
+    <div id="activationError"
+         class="error"></div>
+
+    <button class="btn gold-btn"
+      onclick="activateAccount()">
+      ACTIVATE ACCOUNT
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- ================= SUCCESS ================= -->
+
+<section id="success" class="page">
+
+  <div class="card success">
+
+    <div class="success-icon">
+      ✓
+    </div>
+
+    <h2>ACCOUNT ACTIVATED</h2>
+
+    <p>
+      Your INNOVA.GLOBAL member account
+      has been activated successfully.
+    </p>
+
+    <div id="successId"
+         class="id-box">
+      INNOVA001
+    </div>
+
+    <p>
+      Keep your INNOVA ID and password secure.
+    </p>
+
+    <button class="btn gold-btn"
+      onclick="openLoginAfterActivation()">
+      LOGIN TO PROFILE
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- ================= LOGIN ================= -->
+
+<section id="login" class="page">
+
+  <span class="back"
+    onclick="showPage('welcome')">
+    ← Back
+  </span>
+
+  <div class="card">
+
+    <div class="card-title">
+      MEMBER LOGIN
+    </div>
+
+    <div class="group">
+      <label>MOBILE NUMBER</label>
+
+      <input id="loginMobile"
+             type="tel"
+             placeholder="Enter mobile number">
+    </div>
+
+    <div class="group">
+      <label>PASSWORD</label>
+
+      <input id="loginPassword"
+             type="password"
+             placeholder="Enter password">
+    </div>
+
+    <div id="loginError"
+         class="error"></div>
+
+    <button class="btn gold-btn"
+      onclick="loginAccount()">
+      LOGIN
+    </button>
+
+    <button class="btn outline-btn"
+      onclick="showPage('register')">
+      CREATE NEW ACCOUNT
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- ================= PROFILE ================= -->
+
+<section id="profile" class="page">
+
+  <div class="profile-top">
+
+    <div class="profile-title">
+      MY PROFILE
+    </div>
+
+    <button class="settings"
+      onclick="openSettings()">
+      ⚙
+    </button>
+
+  </div>
+
+
+  <!-- BIG PROFILE CARD -->
+
+  <div class="profile-card">
+
+    <div class="profile-main">
+
+      <div id="profileAvatar"
+           class="avatar avatar-empty">
+        👤
+      </div>
+
+      <div>
+
+        <div id="profileName"
+             class="profile-name">
+          Member Name
+        </div>
+
+        <div id="profileId"
+             class="member-id">
+          INNOVA001
+        </div>
+
+        <div class="active">
+          ● ACTIVE
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <button class="show-more"
+      onclick="toggleMore()">
+      SHOW MORE
+    </button>
+
+
+    <!-- ONLY DATE + TIME -->
+
+    <div id="more"
+         class="more">
+
+      <div class="detail">
+
+        <div class="detail-label">
+          Joining Date
+        </div>
+
+        <div id="joiningDate"
+             class="detail-value">
+          -
+        </div>
+
+      </div>
+
+      <div class="detail">
+
+        <div class="detail-label">
+          Joining Time
+        </div>
+
+        <div id="joiningTime"
+             class="detail-value">
+          -
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ABOUT -->
+
+  <div class="card">
+
+    <div class="about-title">
+      ABOUT INNOVA.GLOBAL
+    </div>
+
+    <div class="about-text">
+
+      INNOVA.GLOBAL is a Smart Digital Network
+      Platform created to provide a professional
+      and organized digital environment for its
+      members.
+
+      <br><br>
+
+      Our vision is to build a connected community
+      where members can connect, learn, participate
+      and grow through a structured digital platform.
+
+      <br><br>
+
+      <b style="color:#f3d98b;">
+        CONNECT • LEARN • GROW
+      </b>
+
+    </div>
+
+  </div>
+
+
+  <!-- NEXT PROGRAM -->
+
+  <div class="next">
+
+    <div class="next-small">
+      🚀 NEXT PROGRAM
+    </div>
+
+    <div class="next-date">
+      10 OCTOBER 2026
+    </div>
+
+    <div class="next-text">
+
+      The Next Program and new packages will be
+      introduced on
+      <b style="color:#f3d98b;">
+        10 October 2026
+      </b>.
+
+      Stay connected with INNOVA.GLOBAL for upcoming
+      program updates and new opportunities.
+
+    </div>
+
+
+    <div class="countdown">
+
+      <div class="time">
+        <div id="days"
+             class="time-number">
+          00
+        </div>
+        <div class="time-label">
+          DAYS
+        </div>
+      </div>
+
+      <div class="time">
+        <div id="hours"
+             class="time-number">
+          00
+        </div>
+        <div class="time-label">
+          HOURS
+        </div>
+      </div>
+
+      <div class="time">
+        <div id="minutes"
+             class="time-number">
+          00
+        </div>
+        <div class="time-label">
+          MINUTES
+        </div>
+      </div>
+
+      <div class="time">
+        <div id="seconds"
+             class="time-number">
+          00
+        </div>
+        <div class="time-label">
+          SECONDS
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- SOCIAL -->
+
+  <div class="card">
+
+    <div class="social-title">
+      CONNECT WITH US
+    </div>
+
+    <div class="social-grid">
+
+      <a class="social"
+         href="https://t.me/+kOclYClnM0NmYzc1"
+         target="_blank">
+        <div class="social-icon">✈</div>
+        Telegram
+      </a>
+
+      <a class="social"
+         href="https://wa.me/8801313213083"
+         target="_blank">
+        <div class="social-icon">◉</div>
+        WhatsApp
+      </a>
+
+      <a class="social"
+         href="https://www.youtube.com/@PowerNetwork7X"
+         target="_blank">
+        <div class="social-icon">▶</div>
+        YouTube
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <button class="btn red-btn"
+    onclick="logout()">
+    LOGOUT
+  </button>
+
+
+  <div class="footer">
+    © 2026 INNOVA.GLOBAL<br>
+    CONNECT • LEARN • GROW
+  </div>
+
+</section>
+
+
+<!-- ================= SETTINGS ================= -->
+
+<section id="settingsPage" class="page">
+
+  <span class="back"
+    onclick="showProfile()">
+    ← Back to Profile
+  </span>
+
+  <div class="card">
+
+    <div class="card-title">
+      SETTINGS
+    </div>
+
+    <div id="settingsAvatar"
+         class="avatar avatar-empty settings-avatar">
+      👤
+    </div>
+
+    <div class="group">
+
+      <label>ACCOUNT NAME</label>
+
+      <input id="settingsName"
+             type="text"
+             placeholder="Enter account name">
+
+    </div>
+
+    <div class="group">
+
+      <label>PROFILE PICTURE</label>
+
+      <input id="photoInput"
+             type="file"
+             accept="image/*">
+
+    </div>
+
+    <div id="settingsError"
+         class="error"></div>
+
+    <button class="btn gold-btn"
+      onclick="saveSettings()">
+      SAVE CHANGES
+    </button>
+
+    <button class="btn red-btn"
+      onclick="logout()">
+      LOGOUT
+    </button>
+
+  </div>
+
+</section>
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   FRESH START STORAGE
+===================================================== */
+
+const MEMBERS_KEY = "INNOVA_GLOBAL_MEMBERS_V2";
+const CURRENT_KEY = "INNOVA_GLOBAL_CURRENT_V2";
+const PENDING_KEY = "INNOVA_GLOBAL_PENDING_V2";
+const LAST_ID_KEY = "INNOVA_GLOBAL_LAST_ID_V2";
+
+
+/*
+  This is a NEW storage version.
+  Old prototype storage is not used.
+*/
+
+
+/* =====================================================
+   PAGE SYSTEM
+===================================================== */
+
+function showPage(id){
+
+  document.querySelectorAll(".page")
+    .forEach(page=>{
+      page.classList.remove("active");
+    });
+
+  const page=document.getElementById(id);
+
+  if(page){
+    page.classList.add("active");
+    window.scrollTo(0,0);
+  }
+}
+
+
+/* =====================================================
+   STORAGE
+===================================================== */
+
+function getMembers(){
+
+  try{
+    return JSON.parse(
+      localStorage.getItem(MEMBERS_KEY)
+    ) || [];
+  }catch(error){
+    return [];
+  }
+
+}
+
+function saveMembers(members){
+
+  localStorage.setItem(
+    MEMBERS_KEY,
+    JSON.stringify(members)
+  );
+
+}
+
+
+/* =====================================================
+   UNIQUE INNOVA ID
+===================================================== */
+
+function generateMemberId(){
+
+  let last=Number(
+    localStorage.getItem(LAST_ID_KEY) || 0
+  );
+
+  last++;
+
+  localStorage.setItem(
+    LAST_ID_KEY,
+    last
+  );
+
+  return "INNOVA" +
+    String(last).padStart(3,"0");
+}
+
+
+/* =====================================================
+   REGISTER
+===================================================== */
+
+function registerAccount(){
+
+  const name=
+    document.getElementById("regName")
+    .value.trim();
+
+  const mobile=
+    document.getElementById("regMobile")
+    .value.trim();
+
+  const password=
+    document.getElementById("regPassword")
+    .value;
+
+  const confirm=
+    document.getElementById("regConfirm")
+    .value;
+
+  const error=
+    document.getElementById("registerError");
+
+  error.textContent="";
+
+
+  if(!name || !mobile || !password || !confirm){
+
+    error.textContent=
+      "Please complete all fields.";
+
+    return;
+  }
+
+
+  if(password.length < 4){
+
+    error.textContent=
+      "Password must contain at least 4 characters.";
+
+    return;
+  }
+
+
+  if(password !== confirm){
+
+    error.textContent=
+      "Passwords do not match.";
+
+    return;
+  }
+
+
+  const members=getMembers();
+
+
+  if(
+    members.some(member=>
+      member.mobile===mobile
+    )
+  ){
+
+    error.textContent=
+      "This mobile number is already registered.";
+
+    return;
+  }
+
+
+  const member={
+
+    memberId:generateMemberId(),
+
+    name:name,
+
+    mobile:mobile,
+
+    password:password,
+
+    active:false,
+
+    paymentMethod:"",
+
+    transactionId:"",
+
+    joiningDate:"",
+
+    joiningTime:"",
+
+    photo:""
+
+  };
+
+
+  members.push(member);
+
+  saveMembers(members);
+
+
+  localStorage.setItem(
+    PENDING_KEY,
+    member.memberId
+  );
+
+
+  document.getElementById(
+    "transactionId"
+  ).value="";
+
+
+  showPage("payment");
+
+}
+
+
+/* =====================================================
+   PAYMENT
+===================================================== */
+
+function submitPayment(){
+
+  const transaction=
+    document.getElementById("transactionId")
+    .value.trim();
+
+  const method=
+    document.getElementById("paymentMethod")
+    .value;
+
+  const error=
+    document.getElementById("paymentError");
+
+  error.textContent="";
+
+
+  if(!transaction){
+
+    error.textContent=
+      "Please enter your transaction ID.";
+
+    return;
+  }
+
+
+  const pendingId=
+    localStorage.getItem(PENDING_KEY);
+
+
+  if(!pendingId){
+
+    error.textContent=
+      "Registration session not found.";
+
+    return;
+  }
+
+
+  const members=getMembers();
+
+  const index=
+    members.findIndex(
+      member=>member.memberId===pendingId
+    );
+
+
+  if(index===-1){
+
+    error.textContent=
+      "Member account not found.";
+
+    return;
+  }
+
+
+  members[index].paymentMethod=method;
+  members[index].transactionId=transaction;
+
+
+  saveMembers(members);
+
+
+  showPage("activation");
+
+}
+
+
+/* =====================================================
+   ACTIVATION CODES
+===================================================== */
+
+const ACTIVATION_CODES=[
+
+  "321456",
+  "654321",
+  "147258",
+  "258147",
+  "369258",
+  "852369",
+  "741852",
+  "963147"
+
+];
+
+
+/* =====================================================
+   ACTIVATE ACCOUNT
+===================================================== */
+
+function activateAccount(){
+
+  const code=
+    document.getElementById("activationCode")
+    .value.trim();
+
+  const error=
+    document.getElementById("activationError");
+
+  error.textContent="";
+
+
+  if(!code){
+
+    error.textContent=
+      "Please enter activation code.";
+
+    return;
+  }
+
+
+  if(!ACTIVATION_CODES.includes(code)){
+
+    error.textContent=
+      "Invalid activation code.";
+
+    return;
+  }
+
+
+  const pendingId=
+    localStorage.getItem(PENDING_KEY);
+
+
+  if(!pendingId){
+
+    error.textContent=
+      "Registration session not found.";
+
+    return;
+  }
+
+
+  const members=getMembers();
+
+  const index=
+    members.findIndex(
+      member=>member.memberId===pendingId
+    );
+
+
+  if(index===-1){
+
+    error.textContent=
+      "Member account not found.";
+
+    return;
+  }
+
+
+  const now=new Date();
+
+
+  members[index].active=true;
+
+
+  members[index].joiningDate=
+    now.toLocaleDateString(
+      "en-GB",
+      {
+        day:"2-digit",
+        month:"long",
+        year:"numeric"
+      }
+    );
+
+
+  members[index].joiningTime=
+    now.toLocaleTimeString(
+      "en-US",
+      {
+        hour:"2-digit",
+        minute:"2-digit",
+        second:"2-digit"
+      }
+    );
+
+
+  saveMembers(members);
+
+
+  localStorage.setItem(
+    CURRENT_KEY,
+    members[index].memberId
+  );
+
+
+  document.getElementById(
+    "successId"
+  ).textContent=
+    members[index].memberId;
+
+
+  localStorage.removeItem(PENDING_KEY);
+
+
+  showPage("success");
+
+}
+
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
+function loginAccount(){
+
+  const mobile=
+    document.getElementById("loginMobile")
+    .value.trim();
+
+  const password=
+    document.getElementById("loginPassword")
+    .value;
+
+  const error=
+    document.getElementById("loginError");
+
+  error.textContent="";
+
+
+  if(!mobile || !password){
+
+    error.textContent=
+      "Please enter mobile number and password.";
+
+    return;
+  }
+
+
+  const members=getMembers();
+
+
+  const member=
+    members.find(
+      item=>
+        item.mobile===mobile &&
+        item.password===password
+    );
+
+
+  if(!member){
+
+    error.textContent=
+      "Mobile number or password is incorrect.";
+
+    return;
+  }
+
+
+  if(!member.active){
+
+    error.textContent=
+      "Your account is not activated yet.";
+
+    return;
+  }
+
+
+  localStorage.setItem(
+    CURRENT_KEY,
+    member.memberId
+  );
+
+
+  loadProfile(member);
+
+  showPage("profile");
+
+}
+
+
+/* =====================================================
+   CURRENT MEMBER
+===================================================== */
+
+function getCurrentMember(){
+
+  const current=
+    localStorage.getItem(CURRENT_KEY);
+
+  if(!current) return null;
+
+
+  const members=getMembers();
+
+
+  return members.find(
+    member=>member.memberId===current
+  ) || null;
+
+}
+
+
+/* =====================================================
+   LOAD PROFILE
+===================================================== */
+
+function loadProfile(member){
+
+  if(!member) return;
+
+
+  document.getElementById(
+    "profileName"
+  ).textContent=member.name;
+
+
+  document.getElementById(
+    "profileId"
+  ).textContent=member.memberId;
+
+
+  document.getElementById(
+    "joiningDate"
+  ).textContent=
+    member.joiningDate || "-";
+
+
+  document.getElementById(
+    "joiningTime"
+  ).textContent=
+    member.joiningTime || "-";
+
+
+  document.getElementById(
+    "settingsName"
+  ).value=member.name;
+
+
+  setAvatar(
+    document.getElementById("profileAvatar"),
+    member.photo
+  );
+
+
+  setAvatar(
+    document.getElementById("settingsAvatar"),
+    member.photo
+  );
+
+}
+
+
+/* =====================================================
+   AVATAR
+===================================================== */
+
+function setAvatar(element,photo){
+
+  if(!element) return;
+
+
+  if(photo){
+
+    element.classList.remove(
+      "avatar-empty"
+    );
+
+    element.innerHTML="";
+
+    element.style.backgroundImage=
+      `url("${photo}")`;
+
+    element.style.backgroundSize="cover";
+
+    element.style.backgroundPosition="center";
+
+  }else{
+
+    element.classList.add(
+      "avatar-empty"
+    );
+
+    element.style.backgroundImage="none";
+
+    element.innerHTML="👤";
+
+  }
+
+}
+
+
+/* =====================================================
+   SHOW MORE
+===================================================== */
+
+function toggleMore(){
+
+  const more=
+    document.getElementById("more");
+
+  const button=
+    document.querySelector(".show-more");
+
+
+  more.classList.toggle("open");
+
+
+  if(more.classList.contains("open")){
+
+    button.textContent="SHOW LESS";
+
+  }else{
+
+    button.textContent="SHOW MORE";
+
+  }
+
+}
+
+
+/* =====================================================
+   SETTINGS
+===================================================== */
+
+function openSettings(){
+
+  const member=getCurrentMember();
+
+  if(!member){
+
+    showPage("welcome");
+
+    return;
+  }
+
+
+  loadProfile(member);
+
+  document.getElementById(
+    "photoInput"
+  ).value="";
+
+
+  showPage("settingsPage");
+
+}
+
+
+function saveSettings(){
+
+  const member=getCurrentMember();
+
+  if(!member) return;
+
+
+  const name=
+    document.getElementById(
+      "settingsName"
+    ).value.trim();
+
+  const file=
+    document.getElementById(
+      "photoInput"
+    ).files[0];
+
+  const error=
+    document.getElementById(
+      "settingsError"
+    );
+
+  error.textContent="";
+
+
+  if(!name){
+
+    error.textContent=
+      "Account name cannot be empty.";
+
+    return;
+  }
+
+
+  const members=getMembers();
+
+  const index=
+    members.findIndex(
+      item=>item.memberId===member.memberId
+    );
+
+
+  if(index===-1) return;
+
+
+  members[index].name=name;
+
+
+  if(file){
+
+    const reader=new FileReader();
+
+
+    reader.onload=function(event){
+
+      members[index].photo=
+        event.target.result;
+
+      saveMembers(members);
+
+      loadProfile(members[index]);
+
+      showPage("profile");
+
+    };
+
+
+    reader.readAsDataURL(file);
+
+
+  }else{
+
+    saveMembers(members);
+
+    loadProfile(members[index]);
+
+    showPage("profile");
+
+  }
+
+}
+
+
+/* =====================================================
+   PROFILE
+===================================================== */
+
+function showProfile(){
+
+  const member=getCurrentMember();
+
+  if(!member){
+
+    showPage("welcome");
+
+    return;
+  }
+
+  loadProfile(member);
+
+  showPage("profile");
+
+}
+
+
+/* =====================================================
+   SUCCESS → LOGIN
+===================================================== */
+
+function openLoginAfterActivation(){
+
+  const member=getCurrentMember();
+
+
+  if(member){
+
+    document.getElementById(
+      "loginMobile"
+    ).value=member.mobile;
+
+  }
+
+
+  document.getElementById(
+    "loginPassword"
+  ).value="";
+
+
+  showPage("login");
+
+}
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+function logout(){
+
+  localStorage.removeItem(CURRENT_KEY);
+
+  document.getElementById(
+    "loginMobile"
+  ).value="";
+
+  document.getElementById(
+    "loginPassword"
+  ).value="";
+
+
+  showPage("welcome");
+
+}
+
+
+/* =====================================================
+   COUNTDOWN
+   10 OCTOBER 2026 — Bangladesh time
+===================================================== */
+
+function updateCountdown(){
+
+  const target=
+    new Date(
+      "2026-10-10T00:00:00+06:00"
+    ).getTime();
+
+
+  const now=
+    Date.now();
+
+
+  let difference=
+    target-now;
+
+
+  if(difference<0){
+    difference=0;
+  }
+
+
+  const days=
+    Math.floor(
+      difference/
+      (1000*60*60*24)
+    );
+
+
+  const hours=
+    Math.floor(
+      (difference%
+      (1000*60*60*24))/
+      (1000*60*60)
+    );
+
+
+  const minutes=
+    Math.floor(
+      (difference%
+      (1000*60*60))/
+      (1000*60)
+    );
+
+
+  const seconds=
+    Math.floor(
+      (difference%
+      (1000*60))/
+      1000
+    );
+
+
+  document.getElementById(
+    "days"
+  ).textContent=
+    String(days).padStart(2,"0");
+
+
+  document.getElementById(
+    "hours"
+  ).textContent=
+    String(hours).padStart(2,"0");
+
+
+  document.getElementById(
+    "minutes"
+  ).textContent=
+    String(minutes).padStart(2,"0");
+
+
+  document.getElementById(
+    "seconds"
+  ).textContent=
+    String(seconds).padStart(2,"0");
+
+}
+
+
+updateCountdown();
+
+setInterval(
+  updateCountdown,
+  1000
+);
+
+
+/* =====================================================
+   STARTUP
+===================================================== */
+
+window.addEventListener(
+  "load",
+  function(){
+
+    const member=getCurrentMember();
+
+    if(member && member.active){
+
+      loadProfile(member);
+
+    }
+
+  }
+);
+
+</script>
+
+</body>
+</html>
